@@ -1,18 +1,4 @@
-/* -------------------------------- 
-
-Primary style
-
--------------------------------- */
-html * {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-*, *:after, *:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
+@import url(http://fonts.googleapis.com/css?family=Oswald:700);
 
 body, html {
   /* important */
@@ -31,14 +17,6 @@ Modules - reusable parts of our design
   margin: 0 auto;
 }
 
-.cd-container.ca {
-  /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
-  width: 100%;
-  /*max-width: 768px;*/
-  max-width: 100%;
-  margin: 0 auto;
-}
-
 .cd-container::after {
   /* clearfix */
   content: '';
@@ -54,32 +32,25 @@ Main components
 .cd-main-content {
   /* you need to assign a min-height to the main content so that the children can inherit it*/
   height: 100%;
-  position: relative;
-  z-index: 1;
 }
 
 .cd-fixed-bg {
   position: relative;
   min-height: 100%;
+  height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  z-index: 1;
-}
-
-.cd-fixed-bg.ca {
-  position: relative;
-  min-height: 40%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  z-index: 1;
+  z-index: 2;
+  /*-webkit-filter: sepia(40%);
+  filter: sepia(40%);*/
 }
 
 .cd-fixed-bg h1, .cd-fixed-bg h2 {
+  font-family: "Oswald", sans-serif;
   position: absolute;
   left: 50%;
-  top: 40%;
+  top: 50%;
   bottom: auto;
   right: auto;
   -webkit-transform: translateX(-50%) translateY(-50%);
@@ -93,44 +64,23 @@ Main components
   font-size: 30px;
   font-size: 1.875rem;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  color: #c10000;
-} 
-
-.cd-fixed-bg.ca h1, .cd-fixed-bg.ca h2 {
-  position: absolute;
-  left: 50%;
-  top: 40%;
-  bottom: auto;
-  right: auto;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -ms-transform: translateX(-50%) translateY(-50%);
-  -o-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-  width: 90%;
-  max-width: 1170px;
-  text-align: center;
-  font-size: 30px;
-  font-size: 1.875rem;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  color: #c10000;
+  color: #ffffff;
 }
 
 .cd-fixed-bg.cd-bg-1 {
-  background-image: url("../../images/bg1.jpg");
-  -webkit-filter: sepia(100%);
-  filter: sepia(100%);
+  background-image: url("/assets/images/tugu.jpg");
 }
+
 .cd-fixed-bg.cd-bg-2 {
-  background-image: url("../../images/bg1.png");
-  /*-webkit-filter: sepia(100%);
-  filter: sepia(100%);*/
+  background-image: url("/assets/images/malioboro.jpg");
 }
+
 @media only screen and (min-width: 768px) {
   .cd-fixed-bg h1, .cd-fixed-bg h2 {
     font-size: 36px;
   }
 }
+
 @media only screen and (min-width: 1170px) {
   .cd-fixed-bg {
     background-attachment: fixed;
@@ -144,26 +94,22 @@ Main components
 .cd-scrolling-bg {
   position: relative;
   min-height: 100%;
+  height: 100vh;
   padding: 4em 0;
   line-height: 1.6;
-  /*box-shadow: 0 0 70px rgba(0, 0, 0, 0.5);*/
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
   z-index: 2;
 }
-.cd-scrolling-bg.cd-color-1 {
-  background-color: #c10000;
-  color: #ffffff;
-  -webkit-filter: sepia(50%);
-  filter: sepia(50%);
+
+.cd-scrolling-bg.cd-color {
+  /*background-color: rgb(103,0,0);*/
+  background-color: rgb(255,255,255);
+  color: rgb(0,0,0);
 }
-.cd-scrolling-bg.cd-color-2 {
-  background-color: rgb(246,246,246);
-  /*color: #ffffff;
-  -webkit-filter: sepia(50%);
-  filter: sepia(50%);*/
-}
+
 @media only screen and (min-width: 768px) {
   .cd-scrolling-bg {
-    /*padding: 8em 0;*/
+    padding: 8em 0;
     font-size: 20px;
     font-size: 1.25rem;
     line-height: 2;
